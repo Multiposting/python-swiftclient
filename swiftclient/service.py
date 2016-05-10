@@ -153,7 +153,8 @@ def _build_default_global_options():
         'segment_threads': 10,
         'object_dd_threads': 10,
         'object_uu_threads': 10,
-        'container_threads': 10
+        'container_threads': 10,
+        'timeout': None,
     }
 
 _default_global_options = _build_default_global_options()
@@ -236,7 +237,8 @@ def get_conn(options):
                       snet=options['snet'],
                       cacert=options['os_cacert'],
                       insecure=options['insecure'],
-                      ssl_compression=options['ssl_compression'])
+                      ssl_compression=options['ssl_compression'],
+                      timeout=options['timeout'])
 
 
 def mkdirs(path):

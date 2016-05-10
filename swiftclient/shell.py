@@ -1403,6 +1403,11 @@ Examples:
                         help='This option is deprecated and not used anymore. '
                              'SSL compression should be disabled by default '
                              'by the system SSL library.')
+    parser.add_argument('--timeout',
+                        action='store', dest='timeout',
+                        type=int, default=None,
+                        help='Timeout (in seconds) of the network '
+                             'connections.')
 
     os_grp = parser.add_argument_group("OpenStack authentication options")
     os_grp.add_argument('--os-username',
