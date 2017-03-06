@@ -581,6 +581,7 @@ def get_auth(auth_url, user, key, **kwargs):
     cacert = kwargs.get('cacert', None)
     insecure = kwargs.get('insecure', False)
     timeout = kwargs.get('timeout', None)
+    logger.debug("New authentification on %s for user %s", auth_url, user)
     if auth_version in AUTH_VERSIONS_V1:
         storage_url, token = get_auth_1_0(auth_url,
                                           user,
